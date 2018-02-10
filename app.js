@@ -19,7 +19,7 @@ app.get("/campgrounds", function(req, res) {
 });
 
 app.post("/campgrounds", function(req, res) {
-  res.send("YOU HIT THE POST ROUTE");
+
 });
 
 app.get("/campgrounds/new", function(req, res) {

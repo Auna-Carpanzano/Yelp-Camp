@@ -18,6 +18,10 @@ app.get("/campgrounds", function(req, res) {
   res.render("campgrounds", {campgrounds: campgrounds});
 });
 
+app.post("/campgrounds", function(req, res){
+  res.send("YOU HIT THE POST ROUTE");
+});
+
 app.listen(3000, function() {
   console.log("The YelpCamp Server Has Started");
 });

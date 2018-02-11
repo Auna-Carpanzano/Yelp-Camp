@@ -9,3 +9,9 @@ var catSchema = new mongoose.Schema({
 });
 
 var Cat = mongoose.model("Cat", catSchema);
+
+var george = new Cat({
+  name: "George",
+  age: 11,
+  temperament: "Grouchy"
+});

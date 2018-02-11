@@ -9,12 +9,13 @@
       </p>
     </div>
   </header>
-
-  <% campgrounds.forEach(function(campground) { %>
-    <div>
-      <h4> <%= campground.name %> </h4>
-      <img src="<%= campground.image %>" alt="campground image">
-    </div>
-  <% }); %>
+  <div class="row">
+    <% campgrounds.forEach(function(campground) { %>
+      <div>
+        <h4> <%= campground.name %> </h4>
+        <img src="<%= campground.image %>" alt="campground image">
+      </div>
+    <% }); %>
+  </div>
 </div>
 <% include partials/footer %>

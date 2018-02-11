@@ -10,17 +10,17 @@ var catSchema = new mongoose.Schema({
 
 var Cat = mongoose.model("Cat", catSchema);
 
-var george = new Cat({
-  name: "Mrs.Norris",
-  age: 7,
-  temperament: "Evil"
-});
+//var george = new Cat({
+//  name: "Mrs.Norris",
+//  age: 7,
+//  temperament: "Evil"
+//});
 
-george.save(function(err, cat){
-  if(err){
-    console.log("SOMETHING WENT WRONG");
-  } else {
-    console.log("WE JUST SAVED A CAT TO THE DATABASE");
-    console.log(cat);
-  }
-});
+//george.save(function(err, cat){
+//  if(err){
+//    console.log("SOMETHING WENT WRONG");
+//  } else {
+//    console.log("WE JUST SAVED A CAT TO THE DATABASE");
+//    console.log(cat);
+//  }
+//});

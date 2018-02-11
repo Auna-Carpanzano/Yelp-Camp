@@ -7,3 +7,5 @@ var catSchema = new mongoose.Schema({
   age: Number,
   temperament: String
 });
+
+var Cat = mongoose.model("Cat", catSchema);

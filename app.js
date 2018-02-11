@@ -32,6 +32,7 @@ app.get("/", function(req, res) {
   res.render("landing");
 });
 
+// INDEX - show all campgrounds
 app.get("/campgrounds", function(req, res) {
   Campground.find({}, function(err, allCampgrounds){
     if (err) {
@@ -42,6 +43,7 @@ app.get("/campgrounds", function(req, res) {
   });
 });
 
+// CREATE - add new campground to DB
 app.post("/campgrounds", function(req, res) {
   var name = req.body.name;
   var image = req.body.image;
@@ -55,6 +57,7 @@ app.post("/campgrounds", function(req, res) {
   });
 });
 
+// NEW - show form to create new campground
 app.get("/campgrounds/new", function(req, res) {
   res.render("new");
 });

@@ -64,10 +64,9 @@ app.get("/campgrounds/new", function(req, res) {
   res.render("new");
 });
 
-// SHOW
+// SHOW - shows more info about one campground
 app.get("/campgrounds/:id", function (req, res) {
-
-  res.send("THIS WILL BE THE SHOW PAGE");
+  res.render("show");
 });
 
 app.listen(3000, function() {

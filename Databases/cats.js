@@ -15,3 +15,12 @@ var george = new Cat({
   age: 11,
   temperament: "Grouchy"
 });
+
+george.save(function(err, cat){
+  if(err){
+    console.log("SOMETHING WENT WRONG");
+  } else {
+    console.log("WE JUST SAVED A CAT TO THE DATABASE");
+    console.log(cat);
+  }
+});

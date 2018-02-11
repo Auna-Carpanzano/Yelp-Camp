@@ -26,14 +26,20 @@ Campground.create(
         console.log("NEWLY CREATE CAMPGROUND");
         console.log(campground);
       }
-    })
+    });
 
 app.get("/", function(req, res) {
   res.render("landing");
 });
 
 app.get("/campgrounds", function(req, res) {
-  res.render("campgrounds", {campgrounds: campgrounds});
+  Campground.find({}, function(err, allCampgrounds){
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("campgrounds", {campgrounds: allCampgrounds});
+    }
+  });
 });
 
 app.post("/campgrounds", function(req, res) {

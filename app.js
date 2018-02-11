@@ -62,6 +62,11 @@ app.get("/campgrounds/new", function(req, res) {
   res.render("new");
 });
 
+// SHOW
+app.get("/campgrounds/:id", function (req, res) {
+  res.send("THIS WILL BE THE SHOW PAGE");
+});
+
 app.listen(3000, function() {
   console.log("The YelpCamp Server Has Started");
 });

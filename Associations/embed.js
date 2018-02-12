@@ -32,3 +32,11 @@ var newPost = new Post ({
   title: "Reflections on Apples",
   content: "They are delicious"
 });
+
+newPost.save(function(err, post) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(post);
+  }
+});

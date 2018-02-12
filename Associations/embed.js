@@ -7,3 +7,8 @@ var userSchema = new mongoose.Schema ({
 });
 
 var User = mongoose.model("User", userSchema);
+
+var postSchema = new mongoose.Schema ({
+  title: String,
+  content: String
+});

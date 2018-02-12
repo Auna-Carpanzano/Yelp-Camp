@@ -16,28 +16,34 @@ var userSchema = new mongoose.Schema ({
 
 var User = mongoose.model("User", userSchema);
 
-//var newUser = new User ({
-//  email: "charlie@brown.edu",
-//  name: "Charlie Brown"
-//});
-//
-//newUser.save(function(err, user) {
-//  if (err) {
-//    console.log(err)
-//  } else {
-//    console.log(user);
-//  }
-//});
-
-var newPost = new Post ({
-  title: "Reflections on Apples",
-  content: "They are delicious"
+var newUser = new User ({
+  email: "hermione@hogwarts.edu",
+  name: "Hermione Granger"
 });
 
-newPost.save(function(err, post) {
+newUser.post.push ({
+  title: "How to brew polyjuice potion",
+  content: "Go to potions class"
+});
+
+
+newUser.save(function(err, user) {
   if (err) {
-    console.log(err);
+    console.log(err)
   } else {
-    console.log(post);
+    console.log(user);
   }
 });
+
+//var newPost = new Post ({
+//  title: "Reflections on Apples",
+//  content: "They are delicious"
+//});
+//
+//newPost.save(function(err, post) {
+//  if (err) {
+//    console.log(err);
+//  } else {
+//    console.log(post);
+//  }
+//});

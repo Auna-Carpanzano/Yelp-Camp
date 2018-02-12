@@ -83,7 +83,7 @@ app.post("/campground/:id/comments", function(req, res) {
         }
       });
     }
-  }
+  });
 });
 
 app.listen(3000, function() {

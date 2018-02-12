@@ -56,6 +56,10 @@ app.get("/campgrounds/:id", function (req, res) {
   });
 });
 
+app.get("/campgrounds/:id/comments/new", function(req, res) {
+  res.render("comments/new");
+});
+
 app.listen(3000, function() {
   console.log("The YelpCamp Server Has Started");
 });

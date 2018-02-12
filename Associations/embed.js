@@ -19,3 +19,11 @@ var newUser = new User ({
   email: "charlie@brown.edu",
   name: "Charlie Brown"
 });
+
+newUser.save(function(err, user) {
+  if (err) {
+    console.log(err)
+  } else {
+    console.log(user);
+  }
+});

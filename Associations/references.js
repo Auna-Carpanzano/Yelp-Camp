@@ -27,8 +27,21 @@ var User = mongoose.model("User", userSchema);
 //});
 
 Post.create ({
-  title: "How to cook the best burger",
+  title: "How to cook the best burger part 2",
   content: "Blah blah blah"
 }, function(err, post) {
-  console.log(post);
+  User.findOne({email: "bob@gmail.com"}, function(err, foundUser) {
+    if (err) {
+      console.log(err);
+    } else {
+      foundUser.post.push(post._id);
+      foundUser.save(function(err, data) {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(data);
+        }
+      });
+    }
+  });
 });

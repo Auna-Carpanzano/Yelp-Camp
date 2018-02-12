@@ -13,7 +13,7 @@ var postSchema = new mongoose.Schema ({
   content: String
 });
 
-var postModel = mongoose.model("Post", postSchema);
+var Post = mongoose.model("Post", postSchema);
 
 //var newUser = new User ({
 //  email: "charlie@brown.edu",

@@ -5,3 +5,5 @@ var userSchema = new mongoose.Schema ({
   email: String,
   name: String
 });
+
+var User = mongoose.model("User", userSchema);

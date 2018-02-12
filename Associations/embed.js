@@ -50,8 +50,18 @@ var User = mongoose.model("User", userSchema);
 
 User.findOne({name: "Hermione Granger"}, function(err, user) {
   if (err) {
-    console.log(err);
+//    console.log(err);
   } else {
-    console.log(user);
+    user.post.push({
+      title: "3 things I really love",
+      content: "Books. Books. Books."
+    });
+    user.save(function(err, user) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(user);
+      }
+    });
   }
 });

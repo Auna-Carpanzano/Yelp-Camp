@@ -16,24 +16,24 @@ var userSchema = new mongoose.Schema ({
 
 var User = mongoose.model("User", userSchema);
 
-var newUser = new User ({
-  email: "hermione@hogwarts.edu",
-  name: "Hermione Granger"
-});
-
-newUser.post.push ({
-  title: "How to brew polyjuice potion",
-  content: "Go to potions class"
-});
-
-
-newUser.save(function(err, user) {
-  if (err) {
-    console.log(err)
-  } else {
-    console.log(user);
-  }
-});
+//var newUser = new User ({
+//  email: "hermione@hogwarts.edu",
+//  name: "Hermione Granger"
+//});
+//
+//newUser.post.push ({
+//  title: "How to brew polyjuice potion",
+//  content: "Go to potions class"
+//});
+//
+//
+//newUser.save(function(err, user) {
+//  if (err) {
+//    console.log(err)
+//  } else {
+//    console.log(user);
+//  }
+//});
 
 //var newPost = new Post ({
 //  title: "Reflections on Apples",
@@ -47,3 +47,11 @@ newUser.save(function(err, user) {
 //    console.log(post);
 //  }
 //});
+
+User.findOne({name: "Hermione Granger"}, function(err, user) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(user);
+  }
+});

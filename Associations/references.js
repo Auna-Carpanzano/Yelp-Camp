@@ -20,3 +20,8 @@ var userSchema = new mongoose.Schema ({
 });
 
 var User = mongoose.model("User", userSchema);
+
+User.create ({
+  email: "bob@gmail.com",
+  name: "Bob Belcher"
+});

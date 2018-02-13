@@ -42,7 +42,16 @@ app.get("/register", function(req, res) {
 
 // HANDLING USER SIGN UP
 app.post("/register", function(req, res) {
-  res.send("REGISTER POST ROUTE");
+  User.register(new User({username: req.body.username}), req.body.password, function(err, user) {
+    if (err) {
+      console.log(err);
+      return res.render("register");
+    } else {
+      passport.authenticate("local")(req, res, function() {
+        res.redirect("/secret");
+      });
+    }
+  });
 });
 
 app.listen(3000, function() {

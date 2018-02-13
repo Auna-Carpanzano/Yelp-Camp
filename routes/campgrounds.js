@@ -33,7 +33,7 @@ router.get("/new", function(req, res) {
   res.render("campgrounds/new");
 });
 
-// SHOW - shows more info about one campground
+// SHOW - show more info about one campground
 router.get("/:id", function (req, res) {
   Campground.findById(req.params.id).populate("comments").exec(function(err, foundCampground) {
     if (err) {

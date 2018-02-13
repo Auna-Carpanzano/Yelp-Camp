@@ -2,11 +2,10 @@ var express = require("express");
 var router = express.Router();
 var passport = require("passport");
 
+// ROOT ROUTE
 router.get("/", function(req, res) {
   res.render("landing");
 });
-
-// AUTH ROUTES
 
 // SHOW THE REGISTER FORM
 router.get("/register", function(req, res) {

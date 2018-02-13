@@ -23,12 +23,21 @@ app.use(passport.session());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+// ROUTES
+
 app.get("/", function(req, res) {
   res.render("home");
 });
 
 app.get("/secret", function(req, res) {
   res.render("secret");
+});
+
+// AUTH ROUTES
+
+// SHOW SIGN UP FORM
+app.get("/register", function(req, res) {
+  res.render("register");
 });
 
 app.listen(3000, function() {

@@ -61,6 +61,14 @@ app.get("/login", function(req, res) {
   res.render("login");
 });
 
+// LOGIN LOGIC
+app.post("/login", passport.authenticate("local", {
+  successRedirect: "/secret",
+  failtureRedirect: "/login"
+}), function(req, res) {
+
+});
+
 app.listen(3000, function() {
   console.log("Server started...")
 });

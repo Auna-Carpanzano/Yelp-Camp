@@ -9,6 +9,7 @@ var express = require("express"),
     User = require("./models/user"),
     seedDB = require("./seeds");
 
+// REQUIRING ROUTES
 var commentRoutes = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes = require("./routes/index");

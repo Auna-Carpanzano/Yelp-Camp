@@ -10,7 +10,7 @@ mongoose.connect("mongodb://localhost/auth_demo_app");
 
 var app = express();
 app.set("view engine", "ejs");
-
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(require("express-session")({
   secret: "Rusty",
   resave: false,
@@ -38,6 +38,11 @@ app.get("/secret", function(req, res) {
 // SHOW SIGN UP FORM
 app.get("/register", function(req, res) {
   res.render("register");
+});
+
+// HANDLING USER SIGN UP
+app.post("/register", function(req, res) {
+  res.send("REGISTER POST ROUTE");
 });
 
 app.listen(3000, function() {

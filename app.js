@@ -36,7 +36,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use(indexRoutes);
+app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use(commentRoutes);
 

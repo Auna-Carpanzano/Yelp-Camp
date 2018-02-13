@@ -67,7 +67,7 @@ app.get("/campgrounds/:id/comments/new", function(req, res) {
   });
 });
 
-app.post("/campground/:id/comments", function(req, res) {
+app.post("/campgrounds/:id/comments", function(req, res) {
   Campground.findById(req.params.id, function(err, campground) {
     if (err) {
       console.log(err);

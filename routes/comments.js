@@ -1,5 +1,7 @@
 var express = require("express");
 var router = express.Router();
+var Campground = require("../models/campground");
+var Comment = require("../models/comment");
 
 router.get("/campgrounds/:id/comments/new", isLoggedIn, function(req, res) {
   Campground.findById(req.params.id, function(err, campground) {

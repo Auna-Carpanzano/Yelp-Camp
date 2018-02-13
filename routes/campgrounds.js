@@ -50,13 +50,17 @@ router.get("/:id", function (req, res) {
 
 // EDIT ROUTE- show form
 router.get("/:id/edit", function(req, res) {
-  Campground.findById(req.params.id, function(err, foundCampground) {
-    if (err) {
-      res.redirect("/campgrounds");
-    } else {
-      res.render("campgrounds/edit", {campground: foundCampground});
-    }
-  });
+  if (req.isAuthenticated()) {
+    Campground.findById(req.params.id, function(err, foundCampground) {
+      if (err) {
+        res.redirect("/campgrounds");
+      } else {
+        res.render("campgrounds/edit", {campground: foundCampground});
+      }
+    });
+  } else {
+    res.send("YOU NEED TO BE LOGGED IN");
+  }
 });
 
 // UPDATE ROUTE - show updated campground

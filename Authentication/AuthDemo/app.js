@@ -30,7 +30,7 @@ app.get("/", function(req, res) {
   res.render("home");
 });
 
-app.get("/secret", function(req, res) {
+app.get("/secret", isLoggedIn, function(req, res) {
   res.render("secret");
 });
 

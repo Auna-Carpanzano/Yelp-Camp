@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>YelpCamp</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/main.css">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
@@ -15,9 +16,13 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav ml-auto">
-      <a class="nav-item nav-link active" href="/">Login <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="/">Sign Up</a>
-      <a class="nav-item nav-link" href="/">Logout</a>
+      <% if (!currentUser) { %>
+        <a class="nav-item nav-link active" href="/login">Login <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="/register">Sign Up</a>
+      <% } else { %>
+        <li><a href="#">Signed In As <%= currentUser.username %></a></li>
+        <a class="nav-item nav-link" href="/logout">Logout</a>
+      <% } %>
     </div>
   </div>
 </nav>

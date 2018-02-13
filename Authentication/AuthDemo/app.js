@@ -75,6 +75,13 @@ app.get("/logout", function(req, res) {
   res.redirect("/");
 });
 
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect("/");
+};
+
 app.listen(3000, function() {
   console.log("Server started...")
 });

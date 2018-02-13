@@ -54,10 +54,9 @@ router.get("/:id/edit", function(req, res) {
     if (err) {
       res.redirect("/campgrounds");
     } else {
-      res.render("campgrounds/edit", )
+      res.render("campgrounds/edit", {campground: foundCampground});
     }
   });
-  res.render("campgrounds/edit", {campground: foundCampground});
 });
 
 // MIDDLEWARE
